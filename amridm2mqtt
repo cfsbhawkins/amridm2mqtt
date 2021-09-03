@@ -20,7 +20,7 @@ import json
 
 # uses signal to shutdown and hard kill opened processes and self
 def shutdown(signum, frame):
-    send_mqtt('amr/availability', 'offline')
+    send_mqtt('amr/status/availability', 'offline')
     rtltcp.send_signal(15)
     rtlamr.send_signal(15)
     time.sleep(1)
