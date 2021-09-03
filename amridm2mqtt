@@ -97,6 +97,9 @@ while True:
         elif msgType == 'IDM':
             meter_id = msgBody['ERTSerialNumber']
             meter_type = msgBody['ERTType']
+	elif msgType == 'R900':
+            meter_id = msgBody['ID']
+            meter_type = msgBody['Type']
         else:
             meter_id = flds['Time']
             debug_print('Unhandled msgType {}'.format(msgType))
